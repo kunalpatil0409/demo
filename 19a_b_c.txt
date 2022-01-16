@@ -1,0 +1,57 @@
+patil@patil-Aspire-A515-51G:~/Documents/Test$ sudo mknod myfif
+[sudo] password for patil: 
+mknod: missing operand after ‘myfif’
+Try 'mknod --help' for more information.
+patil@patil-Aspire-A515-51G:~/Documents/Test$ sudo mknod myfif p
+patil@patil-Aspire-A515-51G:~/Documents/Test$ sudo mkfifo myfiff
+patil@patil-Aspire-A515-51G:~/Documents/Test$ strace -c mknod
+mknod: missing operand
+Try 'mknod --help' for more information.
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+  0.00    0.000000           0         9           read
+  0.00    0.000000           0         4           write
+  0.00    0.000000           0        12           close
+  0.00    0.000000           0        10           fstat
+  0.00    0.000000           0        18           mmap
+  0.00    0.000000           0        12           mprotect
+  0.00    0.000000           0         1           munmap
+  0.00    0.000000           0         3           brk
+  0.00    0.000000           0         2           rt_sigaction
+  0.00    0.000000           0         1           rt_sigprocmask
+  0.00    0.000000           0         8         8 access
+  0.00    0.000000           0         1           execve
+  0.00    0.000000           0         2         2 statfs
+  0.00    0.000000           0         1           arch_prctl
+  0.00    0.000000           0         1           set_tid_address
+  0.00    0.000000           0        13         3 openat
+  0.00    0.000000           0         1           set_robust_list
+  0.00    0.000000           0         1           prlimit64
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.000000                   100        13 total
+patil@patil-Aspire-A515-51G:~/Documents/Test$ strace -c mkfifo
+mkfifo: missing operand
+Try 'mkfifo --help' for more information.
+% time     seconds  usecs/call     calls    errors syscall
+------ ----------- ----------- --------- --------- ----------------
+  0.00    0.000000           0         9           read
+  0.00    0.000000           0         4           write
+  0.00    0.000000           0        12           close
+  0.00    0.000000           0        10           fstat
+  0.00    0.000000           0        18           mmap
+  0.00    0.000000           0        12           mprotect
+  0.00    0.000000           0         1           munmap
+  0.00    0.000000           0         3           brk
+  0.00    0.000000           0         2           rt_sigaction
+  0.00    0.000000           0         1           rt_sigprocmask
+  0.00    0.000000           0         8         8 access
+  0.00    0.000000           0         1           execve
+  0.00    0.000000           0         2         2 statfs
+  0.00    0.000000           0         1           arch_prctl
+  0.00    0.000000           0         1           set_tid_address
+  0.00    0.000000           0        13         3 openat
+  0.00    0.000000           0         1           set_robust_list
+  0.00    0.000000           0         1           prlimit64
+------ ----------- ----------- --------- --------- ----------------
+100.00    0.000000                   100        13 total
+
